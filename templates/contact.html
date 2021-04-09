@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% csrf_token %}
+<body>
+<div class="container-fluid h-100 bg-light text-dark">
+    <div class="row justify-content-center align-items-center">
+        <h4 align="center">Feel free to contact</h4>
+    </div>
+    <hr/>
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <form action="/submitContact" method="post">
+                {% csrf_token %}
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon">Name</span>
+                <input type="text" class="form-control" name="name" placeholder="Username" aria-label="Username"
+                       aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">EmailId</span>
+                <input type="email" class="form-control" name="emailId" placeholder="emailId" aria-label="emailId"
+                       aria-describedby="basic-addon1">
+            </div>
+
+
+            <div class="input-group">
+                <span class="input-group-text">Comments</span>
+                <input  type="text" class="form-control" aria-label="With textarea" name="comments"></input>
+            </div>
+            <div class="button">
+                <button type="submit">Submit</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Word</th>
+        <th scope="col">Meaning</th>
+        <th scope="col">Synonyms</th>
+        <th scope="col">Antonyms</th>
+        <th scope="col">Usage</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for words in data %}
+    <tr>
+        <td>{{ words.word }}</td>
+        <td>{{ words.meaning }}</td>
+        <td>{{ words.synonyms }}</td>
+        <td>{{ words.antonyms }}</td>
+        <td>{{ words.usage }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+{% endblock %}

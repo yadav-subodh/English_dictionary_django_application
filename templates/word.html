@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+<div class="container-fluid h-100 bg-light text-dark">
+    <div class="row justify-content-center align-items-center">
+        <h4 align="center">Add New Word</h4>
+    </div>
+    <hr/>
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+            <form action="/submitWord" method="post">
+                {% csrf_token %}
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon">Word</span>
+                    <input type="text" class="form-control" name="word" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Meaning</span>
+                    <textarea class="form-control" name="meaning" aria-label="With textarea"></textarea>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Synonyms</span>
+                    <input type="text" class="form-control" name="synonyms" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">Antonyms</span>
+                    <input type="text" class="form-control" name="antonyms" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-text">Usage</span>
+                    <textarea class="form-control" name="usage" aria-label="With textarea"></textarea>
+                </div>
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+{% endblock %}
