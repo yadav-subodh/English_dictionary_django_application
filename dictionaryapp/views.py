@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .resources.user import add_new_contact
 from .resources.superUser import get_super_user
 from .resources.dictionary import add_new_word, get_all_words, get_words_by_matching
+from .common_utillity.json_read_write_helper import read_json_data, filter_json_data
 
 # Create your views here.
 """ This end point redirects to the home page.
@@ -12,6 +13,8 @@ from .resources.dictionary import add_new_word, get_all_words, get_words_by_matc
 
 def home(request):
     context = get_all_words()
+    # data_set = read_json_data()
+    # filter_json_data(data_set)
     return render(request, 'index.html', {'data': context})
 
 
